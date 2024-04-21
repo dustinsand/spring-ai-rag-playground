@@ -1,0 +1,7 @@
+### Ask my RAG a question
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "I'm a user of the AWS CDK using Java. When deploying my AWS CDK stack, I receive a forbidden: null message. How do I fix this error?"
+}
