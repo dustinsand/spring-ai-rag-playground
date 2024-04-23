@@ -1,7 +1,16 @@
-### Ask my RAG a question
+###
+### Ask my RAG a question about the AWS CDK book
 POST http://localhost:8080/ask
 Content-Type: application/json
 
 {
   "question" : "I'm a user of the AWS CDK using Java. When deploying my AWS CDK stack, I receive a forbidden: null message. How do I fix this error?"
 }
+
+###
+GET http://localhost:8080/ai/ollama/generate
+Accept: application/json
+
+###
+GET http://localhost:8080/ai/ollama/embedding
+Accept: application/json
