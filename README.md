@@ -4,12 +4,22 @@ The intent of this playground is to experiment with the different embeddings sup
 then expose an API through which questions can be asked about the document's 
 content.
 
+## Experiments
+
+Experiments have been done with OpenAI and Ollama so far. You will need to modify the application.properties to switc
+                                                         
+### OpenAI
 Before running the application for OpenAI, you'll need to acquire an OpenAI API key.
 Set the API key as an environment variable named `OPENAI_API_KEY`. E.g.,
 
 ```
 $ export OPENAI_API_KEY=sk-1234567890abcdef1234567890abcdef
 ```
+
+### Ollama
+Before running the application for Ollama, you'll need to install Ollama and the model to use.
+
+## Developer Setup
 
 You'll also need a document for it to load. Set the `app.resource` property 
 in src/main/resources/application.properties to the resource URL of the
