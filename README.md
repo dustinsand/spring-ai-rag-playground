@@ -1,10 +1,10 @@
-Spring AI RAG Example
+Spring AI RAG Playground
 ---
-Simple example to load the entire text of a document into a vector store and 
+The intent of this playground is to experiment with the different embeddings supported by Spring AI to load the entire text of a document into a vector store and 
 then expose an API through which questions can be asked about the document's 
 content.
 
-Before running the application, you'll need to acquire an OpenAI API key.
+Before running the application for OpenAI, you'll need to acquire an OpenAI API key.
 Set the API key as an environment variable named `OPENAI_API_KEY`. E.g.,
 
 ```
@@ -52,3 +52,5 @@ Or with HTTPie it's a little easier:
 http :8080/ask question="What annotation should I use to create a REST controller?"
 ```
 
+## References
+This playground is based off Craig Walls [example](https://github.com/habuma/spring-ai-rag-example).
