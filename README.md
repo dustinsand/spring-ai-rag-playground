@@ -6,7 +6,7 @@ content.
 
 ## Experiments
 
-Experiments have been done with OpenAI and Ollama so far. You will need to modify the application.properties to switc
+Experiments have been done with OpenAI and Ollama so far. You will need to modify the application.properties to configure for the experiment you want to run.
                                                          
 ### OpenAI
 Before running the application for OpenAI, you'll need to acquire an OpenAI API key.
