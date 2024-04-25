@@ -22,6 +22,7 @@ import java.util.List;
 public class SpringAIRAGExample {
 
     public static void main(String[] args) {
+
         SpringApplication.run(SpringAIRAGExample.class, args);
     }
 
@@ -33,17 +34,26 @@ public class SpringAIRAGExample {
 
     @Bean
     SimpleVectorStore simpleVectorStore(EmbeddingClient embeddingClient) {
+
         SimpleVectorStore simpleVectorStore = new SimpleVectorStore(embeddingClient);
+        SpringRagHydrator.vs =  simpleVectorStore;
+        SpringRagHydrator.fileStorePath =  vectorStorePath;
+
         File vectorStoreFile = new File(vectorStorePath);
         if (vectorStoreFile.exists()) { // load existing vector store if exists
             simpleVectorStore.load(vectorStoreFile);
         } else { // otherwise load the documents and save the vector store
+
+          
             TikaDocumentReader documentReader = new TikaDocumentReader(pdfResource);
+
             List<Document> documents = documentReader.get();
             TextSplitter textSplitter = new TokenTextSplitter();
+            SpringRagHydrator.spl =  textSplitter;
             List<Document> splitDocuments = textSplitter.apply(documents);
             simpleVectorStore.add(splitDocuments);
             simpleVectorStore.save(vectorStoreFile);
+          
         }
         return simpleVectorStore;
     }
