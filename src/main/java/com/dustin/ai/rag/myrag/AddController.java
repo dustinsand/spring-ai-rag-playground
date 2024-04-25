@@ -32,7 +32,7 @@ public class AddController {
 
     @PostMapping
     public String add(@RequestBody DocumentList docs){
-        System.out.print(docs);
+
         SpringRagHydrator.hydrateVectorStore(docs.urls());
         return "Success";
     }
