@@ -8,6 +8,15 @@ Content-Type: application/json
 }
 
 ###
+### Add documents to embed
+POST http://localhost:8080/add
+Content-Type: application/json
+
+{
+    "urls": ["file:///Users/dustin/Documents/Tech-Books/CURRENT-BOOKS-READING/awscdk.pdf"]
+}
+
+###
 GET http://localhost:8080/ai/ollama/generate
 Accept: application/json
 

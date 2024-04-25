@@ -1,35 +1,32 @@
 package com.dustin.ai.rag.myrag;
 
-import java.io.File;
-import java.util.ArrayList;
-
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TextSplitter;
-import org.springframework.ai.vectorstore.SimpleVectorStore;
+import org.springframework.ai.transformer.splitter.TokenTextSplitter;
+import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.stereotype.Component;
 
+import java.util.*;
 
+@Component
 public class SpringRagHydrator {
-    
-    static protected TikaDocumentReader dR;
-    static protected TextSplitter spl;
-    static protected String fileStorePath;
-    static protected SimpleVectorStore vs;
-   
- 
 
-    static SimpleVectorStore hydrateVectorStore(ArrayList<String> documentUrls){
-        File vsf = new File(fileStorePath);
+    final VectorStore vs;
+
+    public SpringRagHydrator(VectorStore vs) {
+        this.vs = vs;
+    }
+
+    public void hydrateVectorStore(ArrayList<String> documentUrls) {
         for (String docfile : documentUrls) {
-            try{
-                dR =  new TikaDocumentReader(docfile);
-                vs.add(spl.apply(dR.get()));
-                vs.save(vsf);
-                
-            }
-            catch(Exception e){
-                System.out.print("Error loading file into vector db. Will not be available for procesesing");
+            try {
+                TikaDocumentReader dR = new TikaDocumentReader(docfile);
+                TextSplitter textSplitter = new TokenTextSplitter();
+                vs.add(textSplitter.apply(dR.get()));
+            } catch (Exception e) {
+                System.out.print("Error loading file into vector db. Will not be available for processing");
+                throw e;
             }
         }
-        return vs;
     }
 }
