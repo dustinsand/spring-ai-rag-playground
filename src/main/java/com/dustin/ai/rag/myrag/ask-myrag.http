@@ -1,10 +1,102 @@
-###
-### Ask my RAG a question about the AWS CDK book
+### Obvious API
 POST http://localhost:8080/ask
 Content-Type: application/json
 
 {
-  "question" : "I'm a user of the AWS CDK using Java. When deploying my AWS CDK stack, I receive a forbidden: null message. How do I fix this error?"
+  "question" : "What is a summary of the Obvious messaging API?"
+}
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "How do I use the Obvious messaging API?"
+}
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "What are the most common errors using the Obvious messaging API?"
+}
+
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "How do I fix an issue with the pipeline and NPM Bundle Error codes?"
+}
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "Who can I contact for support about the Obvious messaging API?"
+}
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "Who can I contact for product support about the Obvious messaging API?"
+}
+
+### Obvious API
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "What is the max cloud messages before risks are possible?"
+}
+
+### AWS CDK pg 336
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "How Get a value from an environment variable in aws cdk using Java?"
+}
+
+### AWS CDK pg 232
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "What should I do if When deploying my AWS CDK stack, I receive a NoSuchBucket error?"
+}
+
+### AWS CDK
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "Where can I find more documentation about the AWS CDK?"
+}
+
+
+### AWS CDK - answer not in the pdf
+POST http://localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question" : "Who wrote the AWS CDK book and when was it published?"
+}
+
+### Add documents to embed
+POST http://localhost:8080/add
+Content-Type: application/json
+
+{
+  "urls": [
+    "file:///Users/dustin/workspaces/springai/myrag/docs/obvious-messaging-platform.md",
+    "file:///Users/dustin/Documents/Tech-Books/CURRENT-BOOKS-READING/awscdk.pdf"
+  ]
 }
 
 ###
