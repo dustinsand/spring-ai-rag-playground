@@ -21,6 +21,18 @@ Before running the application for Ollama, you'll need to install Ollama and the
 
 ## Developer Setup
 
+### Run Postgres & PGVector DB locally
+
+```shell
+docker run -it --rm --name postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres ankane/pgvector
+```
+
+You can connect to this server like this:
+```shell
+psql -U postgres -h localhost -p 5432
+```
+
+### Dota
 You'll also need a document for it to load. Set the `app.resource` property 
 in src/main/resources/application.properties to the resource URL of the
 document. For example:
